@@ -9,27 +9,22 @@ public class readFile
         BufferedReader f = new BufferedReader(new FileReader("hi.java"));
         
         String l;
-        String s;
-        
-        System.out.println("Enter a method(Ex: void main)");
-        s = scan.nextLine();
+        int s;
         
         l = f.readLine();
         
         while(l != null)
         {
-            if(l.contains(s))
+            if(l.contains("static"))
             {
-                System.out.println(s + "()");
-                while(!l.contains("}"))
-                {
-                    l = f.readLine();
-                    System.out.println(l);
-                }
-                hi.checkMethod(s);
+                System.out.println(l);
             }
             l = f.readLine();
         }
+        
+        System.out.println("Choose a method(1 for method 1)");
+        s = scan.nextInt();
+        
         f.close();
     }
 }
