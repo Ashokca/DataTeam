@@ -9,7 +9,15 @@ public class hi
     
     public static void checkMethod(String s)
     {
-        if(s.contains("main"))
+    
+    Scanner scan = new Scanner(System.in);
+    String x = scan.nextLine(); 
+    int y = Integer.parseInt(x);
+    switch(y){
+    case 1: ;
+    case 2: ;
+    }
+    if(s.contains("main"))
         {
             String[] args = {};
             main(args);
