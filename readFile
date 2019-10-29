@@ -5,26 +5,26 @@ public class readFile
 {
     public static void main(String[] args) throws IOException
     {
-        Scanner scan = new Scanner(System.in);
-        BufferedReader f = new BufferedReader(new FileReader("hi.java"));
+        Scanner scan = new Scanner(System.in); //initilizing scanner
+        BufferedReader f = new BufferedReader(new FileReader("hi.java")); //initilizing Bufferedreader with our java program
         
-        String l;
+        String l; //initilizing Variables 
         int s;
         
-        l = f.readLine();
+        l = f.readLine(); //making the string veriable get a line from the read file
         
-        while(l != null)
+        while(l != null) //while loop for looping
         {
-            if(l.contains("static"))
+            if(l.contains("static")) //if the string has the word static in it, then it will print out all the code
             {
                 System.out.println(l);
             }
-            l = f.readLine();
+            l = f.readLine(); //it will keep reading another line to advance the loop
         }
         
-        System.out.println("Choose a method(1 for method 1)");
+        System.out.println("Choose a method(1 for method 1)"); 
         s = scan.nextInt();
         
-        f.close();
+        f.close(); //closing the connection from the file
     }
 }
