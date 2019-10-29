@@ -22,8 +22,8 @@ public class readFile
 		{ 
 			while(l != “”)  
 			{ 
-  System.out.println(l); 
-  l=f.readLine(); 
+			  System.out.println(l); 
+			  l=f.readLine(); 
 			}
 		} 	
             }
