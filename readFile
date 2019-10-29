@@ -1,15 +1,16 @@
 import java.util.*;
 import java.io.*;
 import java.lang.reflect.*;
-public class readFile
+public class readFile1
 {
     public static void main(String[] args) throws IOException
     {
         Scanner scan = new Scanner(System.in); //initilizing scanner
         BufferedReader f = new BufferedReader(new FileReader("hi.java")); //initilizing Bufferedreader with our java program
+        BufferedReader c = new BufferedReader(new FileReader("hi.java"));
         
         String l; //initilizing Variables 
-        int s;
+        String s;
         
         l = f.readLine(); //making the string veriable get a line from the read file
         
@@ -21,10 +22,22 @@ public class readFile
             }
             l = f.readLine(); //it will keep reading another line to advance the loop
         }
+        System.out.println("Choose a method"); 
+        s = scan.nextLine();
         
-        System.out.println("Choose a method(1 for method 1)"); 
-        s = scan.nextInt();
-        
-        f.close(); //closing the connection from the file
+        while((l = c.readLine()) != null) //while loop for looping
+        {
+            if(l.contains(s)) //if the string has the word static in it, then it will print out all the code
+            {
+                while(!l.contains("}"))
+                {
+                    l = c.readLine();
+                    System.out.println(l);
+                }
+                break;
+            }
+            l = f.readLine(); //it will keep reading another line to advance the loop
+        }
+        f.close();
     }
 }
