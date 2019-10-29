@@ -1,0 +1,40 @@
+import java.util.*;
+import java.io.*;
+import java.lang.reflect.*;
+public class readFile
+{
+    public static void main(String[] args) throws IOException
+    {
+        Scanner scan = new Scanner(System.in); //initializing scanner
+        BufferedReader f = new BufferedReader(new FileReader("hi.java")); //initializing Bufferedreader with our java program
+        
+        String l, String W; //initializing Variables 
+        int s;
+        W = scan.nextLine();
+        l = f.readLine(); //making the string variable get a line from the read file
+        
+        while(l != null) //while loop for looping
+        {
+            if(l.contains("W")) //if the string has the word static in it, then it will print out all the code
+            {
+                l=f.readLine(); 
+		if(l.contains(“{”)) 
+		{ 
+			while(l != “”)  
+			{ 
+  System.out.println(l); 
+  l=f.readLine(); 
+			}
+		} 	
+            }
+            l = f.readLine(); //it will keep reading another line to advance the loop
+        }
+        
+        System.out.println("Choose a method(1 for method 1)"); 
+        s = scan.nextInt();
+        
+        f.close(); //closing the connection from the file
+    }
+}
+
+
